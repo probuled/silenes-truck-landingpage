@@ -1,7 +1,7 @@
 import { Container } from '../components/Container';
 import { Reveal } from '../components/Reveal';
 import { SectionHeading } from '../components/SectionHeading';
-import { fadeIn } from '../animations/variants';
+import { slideInRight } from '../animations/variants';
 import type { GalleryPhoto } from '../types/content';
 
 interface AboutProps {
@@ -12,7 +12,11 @@ export function About({ photos }: AboutProps) {
   const [sign, grill, family, seating] = photos;
 
   return (
-    <section id="sobre" className="bg-surface py-24 sm:py-32" aria-labelledby="sobre-heading">
+    <section
+      id="sobre"
+      className="bg-[linear-gradient(180deg,var(--color-ink)_0%,var(--color-surface)_12%,var(--color-surface)_88%,var(--color-ink)_100%)] py-24 sm:py-32"
+      aria-labelledby="sobre-heading"
+    >
       <Container className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal>
           <SectionHeading
@@ -31,7 +35,7 @@ export function About({ photos }: AboutProps) {
           </div>
         </Reveal>
 
-        <Reveal variants={fadeIn} className="grid grid-cols-2 gap-4">
+        <Reveal variants={slideInRight} className="grid grid-cols-2 gap-4">
           <img
             src={sign.image}
             alt={sign.alt}

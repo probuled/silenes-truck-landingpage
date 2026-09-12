@@ -31,6 +31,7 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
               rel="noreferrer"
               icon={<WhatsAppIcon className="size-5" />}
               className="px-8 py-4 text-base"
+              magnetic
             >
               Chamar no WhatsApp
             </Button>

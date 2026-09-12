@@ -39,7 +39,7 @@ export function Header({ business }: HeaderProps) {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-wide text-cream/80 transition-colors hover:text-brand"
+              className="relative text-sm font-semibold uppercase tracking-wide text-cream/80 transition-colors after:absolute after:-bottom-1 after:inset-x-0 after:h-px after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-300 hover:text-brand hover:after:scale-x-100"
             >
               {link.label}
             </a>
