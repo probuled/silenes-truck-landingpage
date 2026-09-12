@@ -26,7 +26,7 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             Peça pelo WhatsApp e receba seu hambúrguer fresquinho direto da chapa. Atendimento rápido, do
             jeitinho que você gosta.
           </p>
-          <OrderButtons business={business} className="justify-center" buttonClassName="px-8 py-4 text-base" />
+          <OrderButtons business={business} className="justify-center" size="large" />
           <a
             href={`tel:+55${business.phoneDisplay.replace(/\D/g, '')}`}
             className="rounded-sm text-cream/70 hover:text-brand-light focus-visible:text-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
