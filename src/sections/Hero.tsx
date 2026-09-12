@@ -1,13 +1,18 @@
-import { useRef } from 'react';
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
-import { Container } from '../components/Container';
-import { OrderButtons } from '../components/OrderButtons';
-import { ClockIcon, MapPinIcon } from '../components/icons';
-import { useStoreStatus } from '../hooks/useStoreStatus';
-import { useTilt } from '../hooks/useTilt';
-import { staggerContainer, fadeUp } from '../animations/variants';
-import { cn } from '../utils/cn';
-import type { BusinessInfo, MenuItem } from '../types/content';
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
+import { Container } from "../components/Container";
+import { OrderButtons } from "../components/OrderButtons";
+import { ClockIcon, MapPinIcon } from "../components/icons";
+import { useStoreStatus } from "../hooks/useStoreStatus";
+import { useTilt } from "../hooks/useTilt";
+import { staggerContainer, fadeUp } from "../animations/variants";
+import { cn } from "../utils/cn";
+import type { BusinessInfo, MenuItem } from "../types/content";
 
 interface HeroProps {
   business: BusinessInfo;
@@ -16,11 +21,11 @@ interface HeroProps {
 }
 
 const EMBERS = [
-  { top: '18%', left: '62%', size: 5, duration: 7, delay: 0 },
-  { top: '32%', left: '84%', size: 3, duration: 5.5, delay: 0.6 },
-  { top: '58%', left: '70%', size: 4, duration: 6.5, delay: 1.2 },
-  { top: '74%', left: '90%', size: 3, duration: 5, delay: 0.3 },
-  { top: '46%', left: '56%', size: 2, duration: 6, delay: 1.6 },
+  { top: "18%", left: "62%", size: 5, duration: 7, delay: 0 },
+  { top: "32%", left: "84%", size: 3, duration: 5.5, delay: 0.6 },
+  { top: "58%", left: "70%", size: 4, duration: 6.5, delay: 1.2 },
+  { top: "74%", left: "90%", size: 3, duration: 5, delay: 0.3 },
+  { top: "46%", left: "56%", size: 2, duration: 6, delay: 1.6 },
 ];
 
 export function Hero({ business, heroItem, heroImage }: HeroProps) {
@@ -31,10 +36,10 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
-  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -50,7 +55,10 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
       />
 
       {!shouldReduceMotion && (
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+        >
           {EMBERS.map((ember, index) => (
             <span
               key={index}
@@ -70,20 +78,29 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
 
       <Container className="relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div
-          initial={shouldReduceMotion ? false : 'hidden'}
+          initial={shouldReduceMotion ? false : "hidden"}
           animate="visible"
           variants={staggerContainer}
-          style={shouldReduceMotion ? undefined : { y: contentY, opacity: contentOpacity }}
+          style={
+            shouldReduceMotion
+              ? undefined
+              : { y: contentY, opacity: contentOpacity }
+          }
         >
           <motion.span
             variants={fadeUp}
             className={cn(
-              'inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.1em]',
-              status.isOpen ? 'border-emerald-500/40 text-emerald-400' : 'border-cream/20 text-cream/60',
+              "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.1em]",
+              status.isOpen
+                ? "border-emerald-500/40 text-emerald-400"
+                : "border-cream/20 text-cream/60",
             )}
           >
             <span
-              className={cn('size-2 rounded-full', status.isOpen ? 'bg-emerald-400' : 'bg-cream/40')}
+              className={cn(
+                "size-2 rounded-full",
+                status.isOpen ? "bg-emerald-400" : "bg-cream/40",
+              )}
               aria-hidden="true"
             />
             {status.label}
@@ -99,26 +116,44 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
             <motion.span variants={fadeUp} className="block text-brand">
               bem-feito,
             </motion.span>
-            <motion.span variants={fadeUp} className="block pl-[clamp(16px,7vw,64px)]">
+            <motion.span
+              variants={fadeUp}
+              className="block pl-[clamp(16px,7vw,64px)]"
+            >
               do jeitinho
             </motion.span>
-            <motion.span variants={fadeUp} className="block pl-[clamp(16px,7vw,64px)]">
+            <motion.span
+              variants={fadeUp}
+              className="block pl-[clamp(16px,7vw,64px)]"
+            >
               que você <span className="text-brand">gosta</span>
             </motion.span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-cream/70">
-            Blend na medida, chapa quente e ingredientes frescos todos os dias. A Silene's Truck é parada
-            obrigatória em Paulista para quem leva hambúrguer a sério.
+          <motion.p
+            variants={fadeUp}
+            className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-cream/70"
+          >
+            Blend na medida, chapa quente e ingredientes frescos todos os dias.
+            A Silene's Truck é parada obrigatória em Paulista para quem leva
+            hambúrguer a sério.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-8">
-            <OrderButtons business={business} size="compact" showSeparators={false} />
+            <OrderButtons
+              business={business}
+              size="compact"
+              showSeparators={false}
+            />
           </motion.div>
 
-          <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-6 text-sm text-cream/60">
+          <motion.div
+            variants={fadeUp}
+            className="mt-10 flex flex-wrap gap-6 text-sm text-cream/60"
+          >
             <span className="inline-flex items-center gap-2">
-              <ClockIcon className="size-4 text-brand" /> Ter–Dom · a partir das 17h
+              <ClockIcon className="size-4 text-brand" /> Ter a Dom · a partir
+              das 17h
             </span>
             <span className="inline-flex items-center gap-2">
               <MapPinIcon className="size-4 text-brand" /> {business.address}
@@ -139,9 +174,18 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
             aria-hidden="true"
             className="absolute inset-0 animate-breathe rounded-full bg-brand/30 blur-3xl"
           />
-          <div className={cn('relative z-10 h-full w-full', !shouldReduceMotion && 'animate-float')}>
+          <div
+            className={cn(
+              "relative z-10 h-full w-full",
+              !shouldReduceMotion && "animate-float",
+            )}
+          >
             <motion.img
-              style={shouldReduceMotion ? undefined : { rotateX: tilt.rotateX, rotateY: tilt.rotateY }}
+              style={
+                shouldReduceMotion
+                  ? undefined
+                  : { rotateX: tilt.rotateX, rotateY: tilt.rotateY }
+              }
               src={heroImage}
               alt={`${heroItem.name}, hambúrguer artesanal da Silene's Truck`}
               width={900}
