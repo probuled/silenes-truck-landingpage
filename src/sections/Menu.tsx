@@ -55,7 +55,7 @@ export function Menu({ items, business }: MenuProps) {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {item.tag ? (
-                  <span className="absolute left-3 top-3 rounded-full bg-brand px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cream">
+                  <span className="absolute left-3 top-3 rounded-full bg-brand-dark px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cream">
                     {item.tag}
                   </span>
                 ) : null}
@@ -66,9 +66,9 @@ export function Menu({ items, business }: MenuProps) {
                 <p className="mt-2 flex-1 text-sm text-cream/65">{item.description}</p>
                 <div className="mt-4 flex items-center justify-between">
                   {item.price ? (
-                    <span className="font-display text-lg text-brand">{formatCurrency(item.price)}</span>
+                    <span className="font-display text-lg text-brand-light">{formatCurrency(item.price)}</span>
                   ) : (
-                    <span className="text-xs uppercase tracking-wide text-cream/40">Consulte o preço</span>
+                    <span className="text-xs uppercase tracking-wide text-cream/60">Consulte o preço</span>
                   )}
                 </div>
               </div>

@@ -23,7 +23,7 @@ export function Footer({ business }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram da Silene's Truck"
-              className="flex size-10 items-center justify-center rounded-full border border-border text-cream/70 transition-colors hover:border-brand hover:text-brand"
+              className="flex size-10 items-center justify-center rounded-full border border-border text-cream/70 transition-colors hover:border-brand hover:text-brand focus-visible:border-brand focus-visible:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               <InstagramIcon className="size-5" />
             </a>
@@ -32,7 +32,7 @@ export function Footer({ business }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="WhatsApp da Silene's Truck"
-              className="flex size-10 items-center justify-center rounded-full border border-border text-cream/70 transition-colors hover:border-brand hover:text-brand"
+              className="flex size-10 items-center justify-center rounded-full border border-border text-cream/70 transition-colors hover:border-brand hover:text-brand focus-visible:border-brand focus-visible:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               <WhatsAppIcon className="size-5" />
             </a>
@@ -60,7 +60,7 @@ export function Footer({ business }: FooterProps) {
         </div>
       </Container>
 
-      <Container className="mt-10 border-t border-border pt-6 text-xs text-cream/40">
+      <Container className="mt-10 border-t border-border pt-6 text-xs text-cream/60">
         © {year} Silene's Truck. Todos os direitos reservados.
       </Container>
     </footer>

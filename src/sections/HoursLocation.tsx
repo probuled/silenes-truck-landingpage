@@ -37,7 +37,7 @@ export function HoursLocation({ business }: HoursLocationProps) {
               {business.schedule.map((entry) => (
                 <li key={entry.days} className="flex items-center justify-between py-3 text-cream/80">
                   <span className="capitalize">{entry.days}</span>
-                  <span className={cn('font-semibold', entry.hours === 'Fechado' && 'text-cream/40')}>
+                  <span className={cn('font-semibold', entry.hours === 'Fechado' && 'text-cream/60')}>
                     {entry.hours}
                   </span>
                 </li>
@@ -69,6 +69,9 @@ export function HoursLocation({ business }: HoursLocationProps) {
                 <div>
                   <h3 className="font-display text-2xl uppercase text-cream">Endereço</h3>
                   <p className="mt-2 text-cream/70">{business.address}</p>
+                  <p className="mt-2 text-sm text-cream/60">
+                    Entrega, retirada ou mesinha no local — combina tudo direto no WhatsApp.
+                  </p>
                 </div>
               </div>
               <Button href={business.mapsUrl} target="_blank" rel="noreferrer" variant="outline" className="self-start">

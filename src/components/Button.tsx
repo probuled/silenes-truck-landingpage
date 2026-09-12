@@ -18,10 +18,9 @@ interface ButtonProps extends MotionSafeAnchorProps {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    'bg-brand text-cream hover:bg-brand-light shadow-lg shadow-brand/30 hover:shadow-brand/50',
-  outline: 'border border-cream/30 text-cream hover:border-brand hover:text-brand',
-  ghost: 'text-cream/80 hover:text-brand',
+  primary: 'bg-brand-dark text-cream shadow-lg shadow-brand/30 hover:shadow-brand/60',
+  outline: 'border border-cream/40 text-cream hover:border-brand-light hover:text-brand-light',
+  ghost: 'text-cream/80 hover:text-brand-light',
 };
 
 const MAGNETIC_PULL = 10;

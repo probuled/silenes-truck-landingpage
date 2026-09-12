@@ -35,7 +35,10 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             >
               Chamar no WhatsApp
             </Button>
-            <a href={`tel:+55${business.phoneDisplay.replace(/\D/g, '')}`} className="text-cream/70 hover:text-brand">
+            <a
+              href={`tel:+55${business.phoneDisplay.replace(/\D/g, '')}`}
+              className="rounded-sm text-cream/70 hover:text-brand-light focus-visible:text-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            >
               ou ligue {business.phoneDisplay}
             </a>
           </div>
