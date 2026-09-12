@@ -16,6 +16,8 @@ export const siteContent: SiteContent = {
     tagline: 'Hambúrguer bem-feito, do jeitinho que você gosta',
     phoneDisplay: '(81) 7330-2704',
     whatsappUrl: 'https://whatsss.link/coi9ff',
+    ifoodUrl: '#',
+    ninetyNineFoodUrl: '#',
     instagramUrl: 'https://www.instagram.com/silenestruck/',
     instagramHandle: '@silenestruck',
     address: 'Av. Antônio Cabral, PE-22 — Paulista, PE',

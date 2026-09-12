@@ -1,7 +1,6 @@
 import { Container } from '../components/Container';
 import { Reveal } from '../components/Reveal';
-import { Button } from '../components/Button';
-import { WhatsAppIcon } from '../components/icons';
+import { OrderButtons } from '../components/OrderButtons';
 import type { BusinessInfo } from '../types/content';
 
 interface DeliveryCtaProps {
@@ -27,24 +26,13 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             Peça pelo WhatsApp e receba seu hambúrguer fresquinho direto da chapa. Atendimento rápido, do
             jeitinho que você gosta.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button
-              href={business.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              icon={<WhatsAppIcon className="size-5" />}
-              className="px-8 py-4 text-base"
-              magnetic
-            >
-              Chamar no WhatsApp
-            </Button>
-            <a
-              href={`tel:+55${business.phoneDisplay.replace(/\D/g, '')}`}
-              className="rounded-sm text-cream/70 hover:text-brand-light focus-visible:text-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-            >
-              ou ligue {business.phoneDisplay}
-            </a>
-          </div>
+          <OrderButtons business={business} className="justify-center" buttonClassName="px-8 py-4 text-base" />
+          <a
+            href={`tel:+55${business.phoneDisplay.replace(/\D/g, '')}`}
+            className="rounded-sm text-cream/70 hover:text-brand-light focus-visible:text-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+          >
+            ou ligue {business.phoneDisplay}
+          </a>
         </Reveal>
       </Container>
     </section>

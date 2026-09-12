@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { Container } from '../components/Container';
 import { Button } from '../components/Button';
-import { WhatsAppIcon, ClockIcon, MapPinIcon } from '../components/icons';
+import { OrderButtons } from '../components/OrderButtons';
+import { ClockIcon, MapPinIcon } from '../components/icons';
 import { useStoreStatus } from '../hooks/useStoreStatus';
 import { useTilt } from '../hooks/useTilt';
 import { staggerContainer, fadeUp } from '../animations/variants';
@@ -115,16 +116,8 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
             obrigatória em Paulista para quem leva hambúrguer a sério.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
-            <Button
-              href={business.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              icon={<WhatsAppIcon className="size-4" />}
-              magnetic
-            >
-              Peça pelo WhatsApp
-            </Button>
+          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-4">
+            <OrderButtons business={business} />
             <Button href="#cardapio" variant="outline">
               Ver cardápio
             </Button>

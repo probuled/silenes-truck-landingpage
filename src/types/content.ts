@@ -23,6 +23,8 @@ export interface BusinessInfo {
   tagline: string;
   phoneDisplay: string;
   whatsappUrl: string;
+  ifoodUrl: string;
+  ninetyNineFoodUrl: string;
   instagramUrl: string;
   instagramHandle: string;
   address: string;
