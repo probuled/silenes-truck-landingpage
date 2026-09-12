@@ -21,8 +21,6 @@ export const siteContent: SiteContent = {
     instagramUrl: "https://www.instagram.com/silenestruck/",
     instagramHandle: "@silenestruck",
     address: "Av. Antônio Cabral de Souza, 1770 - Paulista, PE",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Av.+Ant%C3%B4nio+Cabral+PE-22+Paulista+PE",
     schedule: [
       { days: "Terça a quinta", hours: "17h às 23h30" },
       { days: "Sexta a domingo", hours: "17h às 00h" },

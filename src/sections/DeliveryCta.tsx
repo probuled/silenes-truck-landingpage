@@ -1,7 +1,7 @@
-import { Container } from '../components/Container';
-import { Reveal } from '../components/Reveal';
-import { OrderButtons } from '../components/OrderButtons';
-import type { BusinessInfo } from '../types/content';
+import { Container } from "../components/Container";
+import { Reveal } from "../components/Reveal";
+import { OrderButtons } from "../components/OrderButtons";
+import type { BusinessInfo } from "../types/content";
 
 interface DeliveryCtaProps {
   business: BusinessInfo;
@@ -9,7 +9,11 @@ interface DeliveryCtaProps {
 
 export function DeliveryCta({ business }: DeliveryCtaProps) {
   return (
-    <section id="contato" className="relative overflow-hidden py-24 sm:py-28" aria-labelledby="cta-heading">
+    <section
+      id="contato"
+      className="relative overflow-hidden py-24 sm:py-28"
+      aria-labelledby="cta-heading"
+    >
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[linear-gradient(120deg,rgba(225,29,42,0.25),transparent_60%)]"
@@ -23,12 +27,17 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             Pediu, <span className="text-brand">chegou!</span>
           </h2>
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-cream/70">
-            Peça pelo WhatsApp e receba seu hambúrguer fresquinho direto da chapa. Atendimento rápido, do
-            jeitinho que você gosta.
+            Peça pelo WhatsApp, Ifood ou 99Food e receba seu hambúrguer
+            fresquinho direto da chapa. Atendimento rápido, do jeitinho que você
+            gosta.
           </p>
-          <OrderButtons business={business} className="justify-center" size="large" />
+          <OrderButtons
+            business={business}
+            className="justify-center"
+            size="large"
+          />
           <a
-            href={`tel:+55${business.phoneDisplay.replace(/\D/g, '')}`}
+            href={`tel:+55${business.phoneDisplay.replace(/\D/g, "")}`}
             className="rounded-sm text-cream/70 hover:text-brand-light focus-visible:text-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
           >
             ou ligue {business.phoneDisplay}

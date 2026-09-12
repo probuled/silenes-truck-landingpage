@@ -13,6 +13,7 @@ interface HoursLocationProps {
 
 export function HoursLocation({ business }: HoursLocationProps) {
   const status = useStoreStatus(business);
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.address)}`;
 
   return (
     <section
@@ -103,7 +104,7 @@ export function HoursLocation({ business }: HoursLocationProps) {
                 </div>
               </div>
               <Button
-                href={business.mapsUrl}
+                href={mapsUrl}
                 target="_blank"
                 rel="noreferrer"
                 variant="outline"

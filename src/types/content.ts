@@ -28,7 +28,6 @@ export interface BusinessInfo {
   instagramUrl: string;
   instagramHandle: string;
   address: string;
-  mapsUrl: string;
   schedule: DayHours[];
   closedWeekday: number;
   openHour: number;
