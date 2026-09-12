@@ -159,8 +159,8 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
               src={heroImage}
               alt={`${heroItem.name}, hambúrguer artesanal da Silene's Truck`}
               width={900}
-              height={720}
-              className="h-full w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,0.55)] [-webkit-mask-image:radial-gradient(ellipse_58%_58%_at_50%_50%,black_45%,transparent_92%)] [mask-image:radial-gradient(ellipse_58%_58%_at_50%_50%,black_45%,transparent_92%)]"
+              height={817}
+              className="h-full w-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.6)]"
               fetchPriority="high"
             />
           </div>
