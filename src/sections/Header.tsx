@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Container } from '../components/Container';
 import { Button } from '../components/Button';
-import { WhatsAppIcon } from '../components/icons';
+import { BurgerIcon, WhatsAppIcon } from '../components/icons';
 import { useScrolled } from '../hooks/useScrolled';
 import { cn } from '../utils/cn';
 import type { BusinessInfo } from '../types/content';
+import sileneSticker from '../assets/brand/silene-sticker.png';
 
 const NAV_LINKS = [
   { href: '#cardapio', label: 'Cardápio' },
@@ -30,8 +31,20 @@ export function Header({ business }: HeaderProps) {
       )}
     >
       <Container className="flex h-20 items-center justify-between">
-        <a href="#top" className="font-display text-2xl uppercase leading-none tracking-wide text-cream">
-          Silene's <span className="text-brand">Truck</span>
+        <a href="#top" className="flex items-center gap-2.5 sm:gap-3">
+          <img
+            src={sileneSticker}
+            alt=""
+            className="size-9 shrink-0 -rotate-3 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] sm:size-11"
+          />
+          <span className="font-display text-xl uppercase leading-none tracking-wide text-cream sm:text-2xl">
+            S
+            <span className="relative inline-block">
+              <BurgerIcon className="absolute -top-2.5 left-1/2 size-3 -translate-x-1/2 text-brand sm:-top-3 sm:size-3.5" />
+              i
+            </span>
+            lene's <span className="text-brand">Truck</span>
+          </span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Navegação principal">

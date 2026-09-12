@@ -37,6 +37,16 @@ export function ClockIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function BurgerIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M2 9.5C2 5.36 6.48 2 12 2s10 3.36 10 7.5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+      <rect x="2" y="12" width="20" height="2.6" rx="1.3" />
+      <rect x="2" y="16.4" width="20" height="4.6" rx="2.3" />
+    </svg>
+  );
+}
+
 export function FlameIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
