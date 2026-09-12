@@ -12,17 +12,17 @@ interface OrderButtonsProps {
   showSeparators?: boolean;
 }
 
-const sizeStyles: Record<OrderButtonsSize, { button: string; icon: string; logoHeight: string }> = {
-  compact: { button: 'px-4 py-2.5 text-xs', icon: 'size-4', logoHeight: 'h-4' },
-  default: { button: 'px-6 py-3.5 text-sm', icon: 'size-5', logoHeight: 'h-5' },
-  large: { button: 'px-8 py-4 text-base', icon: 'size-5', logoHeight: 'h-5' },
+const sizeStyles: Record<OrderButtonsSize, { button: string; icon: string; logoHeight: string; containerGap: string }> = {
+  compact: { button: 'px-4 py-3.5 text-xs', icon: 'size-4', logoHeight: 'h-4', containerGap: 'gap-3' },
+  default: { button: 'px-6 py-3.5 text-sm', icon: 'size-5', logoHeight: 'h-5', containerGap: 'gap-3' },
+  large: { button: 'px-8 py-4 text-base', icon: 'size-5', logoHeight: 'h-5', containerGap: 'gap-3' },
 };
 
 export function OrderButtons({ business, className, size = 'default', showSeparators = true }: OrderButtonsProps) {
-  const { button: buttonSize, icon: iconSize, logoHeight } = sizeStyles[size];
+  const { button: buttonSize, icon: iconSize, logoHeight, containerGap } = sizeStyles[size];
 
   return (
-    <div className={cn('flex flex-wrap items-center gap-3', className)}>
+    <div className={cn('flex flex-wrap items-center', containerGap, className)}>
       <Button
         href={business.whatsappUrl}
         target="_blank"

@@ -15,9 +15,10 @@ export const siteContent: SiteContent = {
     name: "Silene's Truck",
     tagline: "Hambúrguer bem-feito, do jeitinho que você gosta",
     phoneDisplay: "(81) 7330-2704",
-    whatsappUrl: "https://whatsss.link/coi9ff",
-    ifoodUrl: "#",
-    ninetyNineFoodUrl: "#",
+    whatsappUrl: "https://wa.me/558173302704",
+    ifoodUrl:
+      "https://www.ifood.com.br/delivery/paulista-pe/silenes-truck-maranguape-i/18ce0325-d19f-4bfa-baa2-f2a434a48afb?utm_medium=share",
+    ninetyNineFoodUrl: "https://oia.99app.com/dlp9/Rz2pji",
     instagramUrl: "https://www.instagram.com/silenestruck/",
     instagramHandle: "@silenestruck",
     address: "Av. Antônio Cabral de Souza, 1770 - Paulista, PE",
