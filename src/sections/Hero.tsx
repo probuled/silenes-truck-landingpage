@@ -12,6 +12,7 @@ import type { BusinessInfo, MenuItem } from '../types/content';
 interface HeroProps {
   business: BusinessInfo;
   heroItem: MenuItem;
+  heroImage: string;
 }
 
 const EMBERS = [
@@ -22,7 +23,7 @@ const EMBERS = [
   { top: '46%', left: '56%', size: 2, duration: 6, delay: 1.6 },
 ];
 
-export function Hero({ business, heroItem }: HeroProps) {
+export function Hero({ business, heroItem, heroImage }: HeroProps) {
   const status = useStoreStatus(business);
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
@@ -152,15 +153,17 @@ export function Hero({ business, heroItem }: HeroProps) {
             aria-hidden="true"
             className="absolute inset-0 animate-breathe rounded-full bg-brand/30 blur-3xl"
           />
-          <motion.img
-            style={shouldReduceMotion ? undefined : { rotateX: tilt.rotateX, rotateY: tilt.rotateY }}
-            src={heroItem.image}
-            alt={`${heroItem.name}, hambúrguer artesanal da Silene's Truck`}
-            width={900}
-            height={720}
-            className="relative z-10 h-full w-full rounded-[2.5rem] border border-white/10 object-cover shadow-2xl shadow-black/60"
-            fetchPriority="high"
-          />
+          <div className={cn('relative z-10 h-full w-full', !shouldReduceMotion && 'animate-float')}>
+            <motion.img
+              style={shouldReduceMotion ? undefined : { rotateX: tilt.rotateX, rotateY: tilt.rotateY }}
+              src={heroImage}
+              alt={`${heroItem.name}, hambúrguer artesanal da Silene's Truck`}
+              width={900}
+              height={720}
+              className="h-full w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,0.55)] [-webkit-mask-image:radial-gradient(ellipse_58%_58%_at_50%_50%,black_45%,transparent_92%)] [mask-image:radial-gradient(ellipse_58%_58%_at_50%_50%,black_45%,transparent_92%)]"
+              fetchPriority="high"
+            />
+          </div>
         </motion.div>
       </Container>
     </section>

@@ -10,7 +10,7 @@ import { Footer } from '../sections/Footer';
 import type { homeLoader } from '../routes';
 
 export function Home() {
-  const { business, menu, gallery } = useLoaderData() as ReturnType<typeof homeLoader>;
+  const { business, menu, gallery, heroImage } = useLoaderData() as ReturnType<typeof homeLoader>;
 
   return (
     <>
@@ -24,7 +24,7 @@ export function Home() {
       <Header business={business} />
 
       <main>
-        <Hero business={business} heroItem={menu[0]} />
+        <Hero business={business} heroItem={menu[0]} heroImage={heroImage} />
         <Marquee />
         <Menu items={menu} business={business} />
         <About photos={gallery} />

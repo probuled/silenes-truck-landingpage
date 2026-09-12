@@ -35,6 +35,7 @@ export interface BusinessInfo {
 }
 
 export interface SiteContent {
+  heroImage: string;
   business: BusinessInfo;
   menu: MenuItem[];
   gallery: GalleryPhoto[];

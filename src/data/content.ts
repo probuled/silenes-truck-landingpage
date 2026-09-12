@@ -1,4 +1,5 @@
 import heroBurger from '../assets/photos/hero-burger.jpg';
+import heroBurgerCutout from '../assets/photos/hero-burger.webp';
 import bomGostoBurger from '../assets/photos/bom-gosto-burger.jpg';
 import xTropicalBurger from '../assets/photos/x-tropical-burger.jpg';
 import friedChickenBurger from '../assets/photos/fried-chicken-burger.jpg';
@@ -9,6 +10,7 @@ import outdoorSeating from '../assets/photos/outdoor-seating.jpg';
 import type { SiteContent } from '../types/content';
 
 export const siteContent: SiteContent = {
+  heroImage: heroBurgerCutout,
   business: {
     name: "Silene's Truck",
     tagline: 'Hambúrguer bem-feito, do jeitinho que você gosta',
