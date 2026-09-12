@@ -46,7 +46,7 @@ export function HoursLocation({ business }: HoursLocationProps) {
 
             <span
               className={cn(
-                'mt-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-wide',
+                'mt-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.1em]',
                 status.isOpen ? 'border-emerald-500/40 text-emerald-400' : 'border-cream/20 text-cream/60',
               )}
             >

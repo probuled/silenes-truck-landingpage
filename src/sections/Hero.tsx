@@ -91,7 +91,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
 
           <motion.h1
             variants={staggerContainer}
-            className="mt-6 font-display text-5xl uppercase leading-[0.92] text-cream sm:text-6xl lg:text-7xl"
+            className="mt-6 font-display text-5xl uppercase leading-[1.15] text-cream sm:text-6xl lg:text-7xl"
           >
             <motion.span variants={fadeUp} className="block">
               Hambúrguer
