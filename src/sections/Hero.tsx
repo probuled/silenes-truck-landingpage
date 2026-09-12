@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { Container } from '../components/Container';
-import { Button } from '../components/Button';
 import { OrderButtons } from '../components/OrderButtons';
 import { ClockIcon, MapPinIcon } from '../components/icons';
 import { useStoreStatus } from '../hooks/useStoreStatus';
@@ -97,17 +96,14 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
             <motion.span variants={fadeUp} className="block">
               Hambúrguer
             </motion.span>
-            <motion.span variants={fadeUp} className="block">
+            <motion.span variants={fadeUp} className="block text-brand">
               bem-feito,
             </motion.span>
             <motion.span variants={fadeUp} className="block pl-[clamp(16px,7vw,64px)]">
               do jeitinho
             </motion.span>
             <motion.span variants={fadeUp} className="block pl-[clamp(16px,7vw,64px)]">
-              que você
-            </motion.span>
-            <motion.span variants={fadeUp} className="block pl-[clamp(16px,7vw,64px)] text-brand">
-              gosta
+              que você <span className="text-brand">gosta</span>
             </motion.span>
           </motion.h1>
 
@@ -116,11 +112,8 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
             obrigatória em Paulista para quem leva hambúrguer a sério.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-4">
-            <OrderButtons business={business} />
-            <Button href="#cardapio" variant="outline">
-              Ver cardápio
-            </Button>
+          <motion.div variants={fadeUp} className="mt-8">
+            <OrderButtons business={business} size="compact" showSeparators={false} />
           </motion.div>
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-6 text-sm text-cream/60">
