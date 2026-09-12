@@ -23,12 +23,12 @@ export function About({ photos }: AboutProps) {
             eyebrow="Nossa história"
             title={<span id="sobre-heading">Um food truck que virou ponto de encontro</span>}
           />
-          <div className="mt-6 space-y-4 text-cream/70">
-            <p>
+          <div className="mt-6 max-w-[62ch] space-y-4 text-cream/70">
+            <p className="text-pretty leading-relaxed">
               A Silene's Truck nasceu para servir hambúrguer artesanal com o cuidado de quem cozinha para a
               família: ingredientes frescos, blend selecionado e tudo montado na hora do seu pedido.
             </p>
-            <p>
+            <p className="text-pretty leading-relaxed">
               Hoje somos parada certa em Paulista para quem quer boa comida, música e um clima gostoso ao ar
               livre — de terça a domingo, sempre a partir das 17h.
             </p>

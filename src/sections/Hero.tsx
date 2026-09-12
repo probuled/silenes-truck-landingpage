@@ -78,7 +78,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
           <motion.span
             variants={fadeUp}
             className={cn(
-              'inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-wide',
+              'inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.1em]',
               status.isOpen ? 'border-emerald-500/40 text-emerald-400' : 'border-cream/20 text-cream/60',
             )}
           >
@@ -110,7 +110,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
             </motion.span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="mt-6 max-w-lg text-lg text-cream/70">
+          <motion.p variants={fadeUp} className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-cream/70">
             Blend na medida, chapa quente e ingredientes frescos todos os dias. A Silene's Truck é parada
             obrigatória em Paulista para quem leva hambúrguer a sério.
           </motion.p>

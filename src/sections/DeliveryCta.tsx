@@ -17,10 +17,13 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
       />
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <Reveal className="flex flex-col items-center gap-6">
-          <h2 id="cta-heading" className="font-display text-5xl uppercase leading-[0.95] text-cream sm:text-6xl">
+          <h2
+            id="cta-heading"
+            className="text-balance font-display text-5xl uppercase leading-[0.95] text-cream sm:text-6xl"
+          >
             Pediu, <span className="text-brand">chegou!</span>
           </h2>
-          <p className="max-w-xl text-lg text-cream/70">
+          <p className="max-w-xl text-pretty text-lg leading-relaxed text-cream/70">
             Peça pelo WhatsApp e receba seu hambúrguer fresquinho direto da chapa. Atendimento rápido, do
             jeitinho que você gosta.
           </p>

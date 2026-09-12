@@ -16,7 +16,7 @@ export function Footer({ business }: FooterProps) {
           <span className="font-display text-2xl uppercase text-cream">
             Silene's <span className="text-brand">Truck</span>
           </span>
-          <p className="mt-3 text-sm text-cream/60">{business.tagline}</p>
+          <p className="mt-3 text-pretty text-sm leading-relaxed text-cream/60">{business.tagline}</p>
           <div className="mt-5 flex gap-4">
             <a
               href={business.instagramUrl}
