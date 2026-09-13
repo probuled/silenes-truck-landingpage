@@ -36,12 +36,6 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             className="justify-center"
             size="large"
           />
-          <a
-            href={`tel:+55${business.phoneDisplay.replace(/\D/g, "")}`}
-            className="rounded-sm text-cream/70 hover:text-brand-light focus-visible:text-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-          >
-            ou ligue {business.phoneDisplay}
-          </a>
         </Reveal>
       </Container>
     </section>
