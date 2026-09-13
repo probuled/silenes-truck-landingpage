@@ -7,6 +7,10 @@ const PHRASES = [
   'Pediu, chegou',
   'Blend artesanal',
   'Do jeitinho que você gosta',
+  'Ingredientes selecionados',
+  'Sabor de food truck',
+  'Sempre fresquinho',
+  'Feito na hora',
 ];
 
 export function Marquee() {
