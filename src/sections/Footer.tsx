@@ -14,8 +14,8 @@ export function Footer({ business }: FooterProps) {
   return (
     <footer className="border-t border-border bg-surface py-14">
       <Reveal>
-        <Container className="grid gap-10 sm:grid-cols-3">
-          <div>
+        <Container className="grid gap-10 text-center sm:grid-cols-3 sm:text-left">
+          <div className="flex flex-col items-center sm:items-start">
             <div className="flex items-center gap-2.5">
               <img
                 src={sileneSticker}
@@ -58,7 +58,7 @@ export function Footer({ business }: FooterProps) {
             <h3 className="font-display text-base uppercase tracking-wide text-cream">Horários</h3>
             <ul className="mt-3 space-y-2">
               {business.schedule.map((entry) => (
-                <li key={entry.days} className="flex items-center gap-2">
+                <li key={entry.days} className="flex items-center justify-center gap-2 sm:justify-start">
                   <ClockIcon className="size-4 text-brand" />
                   {entry.days}: {entry.hours}
                 </li>
@@ -68,7 +68,7 @@ export function Footer({ business }: FooterProps) {
 
           <div className="text-sm text-cream/70">
             <h3 className="font-display text-base uppercase tracking-wide text-cream">Onde estamos</h3>
-            <p className="mt-3 flex items-start gap-2">
+            <p className="mt-3 flex items-start justify-center gap-2 sm:justify-start">
               <MapPinIcon className="mt-0.5 size-4 shrink-0 text-brand" />
               {business.address}
             </p>
@@ -76,7 +76,7 @@ export function Footer({ business }: FooterProps) {
         </Container>
       </Reveal>
 
-      <Container className="mt-10 border-t border-border pt-6 text-xs text-cream/60">
+      <Container className="mt-10 border-t border-border pt-6 text-center text-xs text-cream/60 sm:text-left">
         © {year} Silene's Truck. Todos os direitos reservados.
       </Container>
     </footer>

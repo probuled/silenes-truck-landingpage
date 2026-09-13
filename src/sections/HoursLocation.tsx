@@ -110,7 +110,7 @@ export function HoursLocation({ business }: HoursLocationProps) {
               })}
             </motion.ul>
 
-            <div className="mt-8 flex flex-col gap-4 border-t border-border pt-6 sm:mt-auto sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-8 flex flex-col items-center gap-4 border-t border-border pt-6 text-center sm:mt-auto sm:flex-row sm:items-center sm:justify-between sm:text-left">
               <p className="font-display text-xl uppercase leading-none text-cream sm:text-2xl">
                 Siga a gente no Instagram
               </p>
@@ -119,7 +119,7 @@ export function HoursLocation({ business }: HoursLocationProps) {
                 target="_blank"
                 rel="noreferrer"
                 icon={<InstagramIcon className="size-5" />}
-                className="self-start bg-gradient-to-tr from-instagram-start via-instagram-mid to-instagram-end shadow-lg shadow-instagram-mid/40 hover:shadow-instagram-mid/70 sm:self-auto"
+                className="self-center bg-gradient-to-tr from-instagram-start via-instagram-mid to-instagram-end shadow-lg shadow-instagram-mid/40 hover:shadow-instagram-mid/70 sm:self-auto"
               >
                 {business.instagramHandle}
               </Button>
