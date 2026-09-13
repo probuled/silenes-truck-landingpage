@@ -43,7 +43,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
     <section
       id="top"
       ref={sectionRef}
-      className="relative min-h-[100svh] overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28"
+      className="relative min-h-[100svh] overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28 [@media(max-height:640px)]:min-h-0 [@media(max-height:640px)]:pt-24 [@media(max-height:640px)]:pb-12"
     >
       <motion.div
         aria-hidden="true"
@@ -83,6 +83,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
               ? undefined
               : { y: contentY, opacity: contentOpacity }
           }
+          className="text-center lg:text-left"
         >
           <motion.h1
             variants={staggerContainer}
@@ -96,13 +97,13 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
             </motion.span>
             <motion.span
               variants={fadeUp}
-              className="block pl-[clamp(16px,7vw,64px)]"
+              className="block lg:pl-[clamp(16px,7vw,64px)]"
             >
               do jeitinho
             </motion.span>
             <motion.span
               variants={fadeUp}
-              className="block pl-[clamp(16px,7vw,64px)]"
+              className="block lg:pl-[clamp(16px,7vw,64px)]"
             >
               que você <span className="text-brand">gosta</span>
             </motion.span>
@@ -110,7 +111,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
 
           <motion.p
             variants={fadeUp}
-            className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-cream/70"
+            className="mx-auto mt-6 max-w-lg text-pretty text-lg leading-relaxed text-cream/70 lg:mx-0"
           >
             Blend na medida, chapa quente e ingredientes frescos todos os dias.
             A Silene's Truck é parada obrigatória em Paulista para quem leva
@@ -122,6 +123,8 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
               business={business}
               size="compact"
               showSeparators={false}
+              stackOnMobile
+              className="mx-auto max-w-sm justify-center lg:mx-0 lg:max-w-none lg:justify-start"
             />
           </motion.div>
         </motion.div>

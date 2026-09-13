@@ -1,9 +1,11 @@
+import { motion } from "motion/react";
 import { Container } from "../components/Container";
 import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 import { Button } from "../components/Button";
 import { ClockIcon, MapPinIcon } from "../components/icons";
 import { useStoreStatus } from "../hooks/useStoreStatus";
+import { staggerContainer, fadeUp } from "../animations/variants";
 import { cn } from "../utils/cn";
 import type { BusinessInfo } from "../types/content";
 
@@ -34,7 +36,7 @@ export function HoursLocation({ business }: HoursLocationProps) {
         </Reveal>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
-          <Reveal className="rounded-3xl border border-border bg-surface p-8">
+          <Reveal className="rounded-3xl border border-border bg-surface p-8 transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/30">
             <div className="flex items-center gap-3">
               <ClockIcon className="size-6 text-brand" />
               <h3 className="font-display text-2xl uppercase text-cream">
@@ -42,10 +44,14 @@ export function HoursLocation({ business }: HoursLocationProps) {
               </h3>
             </div>
 
-            <ul className="mt-6 divide-y divide-border">
+            <motion.ul
+              variants={staggerContainer}
+              className="mt-6 divide-y divide-border"
+            >
               {business.schedule.map((entry) => (
-                <li
+                <motion.li
                   key={entry.days}
+                  variants={fadeUp}
                   className="flex items-center justify-between py-3 text-cream/80"
                 >
                   <span className="capitalize">{entry.days}</span>
@@ -57,9 +63,9 @@ export function HoursLocation({ business }: HoursLocationProps) {
                   >
                     {entry.hours}
                   </span>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
             <span
               className={cn(
@@ -81,7 +87,7 @@ export function HoursLocation({ business }: HoursLocationProps) {
 
           <Reveal
             delay={0.1}
-            className="flex flex-col overflow-hidden rounded-3xl border border-border bg-surface"
+            className="flex flex-col overflow-hidden rounded-3xl border border-border bg-surface transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/30"
           >
             <iframe
               title="Mapa de localização da Silene's Truck"
