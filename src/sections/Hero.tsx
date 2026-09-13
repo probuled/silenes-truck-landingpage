@@ -7,8 +7,6 @@ import {
 } from "motion/react";
 import { Container } from "../components/Container";
 import { OrderButtons } from "../components/OrderButtons";
-import { ClockIcon, MapPinIcon } from "../components/icons";
-import { useStoreStatus } from "../hooks/useStoreStatus";
 import { useTilt } from "../hooks/useTilt";
 import { staggerContainer, fadeUp } from "../animations/variants";
 import { cn } from "../utils/cn";
@@ -29,7 +27,6 @@ const EMBERS = [
 ];
 
 export function Hero({ business, heroItem, heroImage }: HeroProps) {
-  const status = useStoreStatus(business);
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const tilt = useTilt(6);
@@ -87,25 +84,6 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
               : { y: contentY, opacity: contentOpacity }
           }
         >
-          <motion.span
-            variants={fadeUp}
-            className={cn(
-              "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.1em]",
-              status.isOpen
-                ? "border-emerald-500/40 text-emerald-400"
-                : "border-cream/20 text-cream/60",
-            )}
-          >
-            <span
-              className={cn(
-                "size-2 rounded-full",
-                status.isOpen ? "bg-emerald-400" : "bg-cream/40",
-              )}
-              aria-hidden="true"
-            />
-            {status.label}
-          </motion.span>
-
           <motion.h1
             variants={staggerContainer}
             className="mt-6 font-display text-5xl uppercase leading-[1.15] text-cream sm:text-6xl lg:text-7xl"
@@ -145,19 +123,6 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
               size="compact"
               showSeparators={false}
             />
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            className="mt-10 flex flex-wrap gap-6 text-sm text-cream/60"
-          >
-            <span className="inline-flex items-center gap-2">
-              <ClockIcon className="size-4 text-brand" /> Ter a Dom · a partir
-              das 17h
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <MapPinIcon className="size-4 text-brand" /> {business.address}
-            </span>
           </motion.div>
         </motion.div>
 

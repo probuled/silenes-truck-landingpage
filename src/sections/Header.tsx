@@ -54,13 +54,13 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href="#contato" className="px-5 py-2.5 text-xs">
+          <Button href="#contato" className="px-7 py-3.5 text-sm">
             Peça agora
           </Button>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <Button href="#contato" className="px-4 py-2 text-xs">
+          <Button href="#contato" className="px-5 py-2.5 text-sm">
             Peça
           </Button>
 
