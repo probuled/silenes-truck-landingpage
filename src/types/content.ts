@@ -10,6 +10,8 @@ export interface MenuItem {
 export interface DayHours {
   days: string;
   hours: string;
+  /** 0=domingo … 6=sábado — dias da semana cobertos por esta linha. */
+  weekdays: number[];
 }
 
 export interface GalleryPhoto {

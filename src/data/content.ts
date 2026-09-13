@@ -27,9 +27,9 @@ export const siteContent: SiteContent = {
     instagramHandle: "@silenestruck",
     address: "Av. Antônio Cabral de Souza, 1770 - Paulista, PE",
     schedule: [
-      { days: "Terça a quinta", hours: "17h às 23h30" },
-      { days: "Sexta a domingo", hours: "17h às 00h" },
-      { days: "Segunda-feira", hours: "Fechado" },
+      { days: "Terça a quinta", hours: "17h às 23h30", weekdays: [2, 3, 4] },
+      { days: "Sexta a domingo", hours: "17h às 00h", weekdays: [5, 6, 0] },
+      { days: "Segunda-feira", hours: "Fechado", weekdays: [1] },
     ],
     closedWeekday: 1,
     openHour: 17,
