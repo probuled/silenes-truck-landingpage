@@ -48,16 +48,24 @@ export function Menu({ items, business }: MenuProps) {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-surface"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  loading="lazy"
-                  decoding="async"
-                  width={600}
-                  height={450}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-brand-dark/40 to-ink">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    decoding="async"
+                    width={600}
+                    height={450}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center">
+                    <span className="text-xs font-semibold uppercase tracking-[0.1em] text-cream/40">
+                      Foto em breve
+                    </span>
+                  </div>
+                )}
                 {item.tag ? (
                   <span className="absolute left-3 top-3 rounded-full bg-brand-dark px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-cream">
                     {item.tag}
