@@ -42,6 +42,7 @@ export const siteContent: SiteContent = {
       name: "X-Burguer",
       description:
         "Pão brioche, blend bovino, ovo frito, alface, tomate, picles e maionese da casa.",
+      price: 15.99,
       image: xBurguer,
       tag: "Mais pedido",
     },
@@ -50,6 +51,7 @@ export const siteContent: SiteContent = {
       name: "Bom Gosto Duplo",
       description:
         "Dois blends bovinos, bacon extra, cheddar derretido escorrendo e maionese especial no brioche.",
+      price: 22.99,
       image: bomGostoBurger,
       tag: "Duplo",
     },
@@ -66,6 +68,7 @@ export const siteContent: SiteContent = {
       name: "Chicken Crispy",
       description:
         "Frango empanado crocante, maionese da casa, picles e alface fresquinha no pão brioche.",
+      price: 16.99,
       image: friedChickenBurger,
     },
   ],
