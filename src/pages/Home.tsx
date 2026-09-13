@@ -21,7 +21,7 @@ export function Home() {
         Pular para o conteúdo
       </a>
 
-      <Header business={business} />
+      <Header />
 
       <main>
         <Hero business={business} heroItem={menu[0]} heroImage={heroImage} />

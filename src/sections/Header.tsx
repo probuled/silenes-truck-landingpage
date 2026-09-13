@@ -2,24 +2,18 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Container } from '../components/Container';
 import { Button } from '../components/Button';
-import { BurgerIcon, WhatsAppIcon } from '../components/icons';
+import { BurgerIcon } from '../components/icons';
 import { useScrolled } from '../hooks/useScrolled';
 import { cn } from '../utils/cn';
-import type { BusinessInfo } from '../types/content';
 import sileneSticker from '../assets/brand/silene-sticker.png';
 
 const NAV_LINKS = [
   { href: '#cardapio', label: 'Cardápio' },
   { href: '#sobre', label: 'Sobre' },
   { href: '#horarios', label: 'Horários' },
-  { href: '#contato', label: 'Contato' },
 ];
 
-interface HeaderProps {
-  business: BusinessInfo;
-}
-
-export function Header({ business }: HeaderProps) {
+export function Header() {
   const scrolled = useScrolled();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -60,25 +54,13 @@ export function Header({ business }: HeaderProps) {
         </nav>
 
         <div className="hidden md:block">
-          <Button
-            href={business.whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            icon={<WhatsAppIcon className="size-4" />}
-            className="px-5 py-2.5 text-xs"
-          >
+          <Button href="#contato" className="px-5 py-2.5 text-xs">
             Peça agora
           </Button>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <Button
-            href={business.whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            icon={<WhatsAppIcon className="size-4" />}
-            className="px-4 py-2 text-xs"
-          >
+          <Button href="#contato" className="px-4 py-2 text-xs">
             Peça
           </Button>
 
@@ -129,13 +111,7 @@ export function Header({ business }: HeaderProps) {
                   {link.label}
                 </a>
               ))}
-              <Button
-                href={business.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                icon={<WhatsAppIcon className="size-4" />}
-                className="mt-2"
-              >
+              <Button href="#contato" onClick={() => setMenuOpen(false)} className="mt-2">
                 Peça agora
               </Button>
             </Container>
