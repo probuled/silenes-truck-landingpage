@@ -1,6 +1,7 @@
 import { Container } from '../components/Container';
-import { InstagramIcon, WhatsAppIcon, MapPinIcon, ClockIcon } from '../components/icons';
+import { InstagramIcon, WhatsAppIcon, MapPinIcon, ClockIcon, BurgerIcon } from '../components/icons';
 import type { BusinessInfo } from '../types/content';
+import sileneSticker from '../assets/brand/silene-sticker.png';
 
 interface FooterProps {
   business: BusinessInfo;
@@ -13,9 +14,21 @@ export function Footer({ business }: FooterProps) {
     <footer className="border-t border-border bg-surface py-14">
       <Container className="grid gap-10 sm:grid-cols-3">
         <div>
-          <span className="font-display text-2xl uppercase text-cream">
-            Silene's <span className="text-brand">Truck</span>
-          </span>
+          <div className="flex items-center gap-2.5">
+            <img
+              src={sileneSticker}
+              alt=""
+              className="size-9 shrink-0 -rotate-3 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]"
+            />
+            <span className="font-display text-2xl uppercase leading-none text-cream">
+              S
+              <span className="relative inline-block">
+                <BurgerIcon className="absolute -top-2.5 left-1/2 size-3 -translate-x-1/2 text-brand" />
+                i
+              </span>
+              lene's <span className="text-brand">Truck</span>
+            </span>
+          </div>
           <p className="mt-3 text-pretty text-sm leading-relaxed text-cream/60">{business.tagline}</p>
           <div className="mt-5 flex gap-4">
             <a
