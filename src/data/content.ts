@@ -1,5 +1,5 @@
-import heroBurger from "../assets/photos/hero-burger.jpg";
 import heroBurgerCutout from "../assets/photos/hero-burger.webp";
+import xBurguer from "../assets/photos/x-burguer.jpg";
 import bomGostoBurger from "../assets/photos/bom-gosto-burger.jpg";
 import xTropicalBurger from "../assets/photos/x-tropical-burger.jpg";
 import friedChickenBurger from "../assets/photos/fried-chicken-burger.jpg";
@@ -41,11 +41,11 @@ export const siteContent: SiteContent = {
   },
   menu: [
     {
-      id: "bacon-supreme",
-      name: "Bacon Supreme",
+      id: "x-burguer",
+      name: "X-Burguer",
       description:
-        "Pão brioche, blend bovino, bacon crocante, cheddar cremoso, cebola caramelizada e maionese da casa.",
-      image: heroBurger,
+        "Pão brioche, blend bovino, ovo frito, alface, tomate, picles e maionese da casa.",
+      image: xBurguer,
       tag: "Mais pedido",
     },
     {
