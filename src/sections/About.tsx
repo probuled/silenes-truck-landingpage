@@ -9,7 +9,7 @@ interface AboutProps {
 }
 
 export function About({ photos }: AboutProps) {
-  const [sign, grill, family, seating] = photos;
+  const [family] = photos;
 
   return (
     <section
@@ -41,42 +41,15 @@ export function About({ photos }: AboutProps) {
           </div>
         </Reveal>
 
-        <Reveal variants={slideInRight} className="grid grid-cols-2 gap-4">
-          <img
-            src={sign.image}
-            alt={sign.alt}
-            loading="lazy"
-            decoding="async"
-            width={500}
-            height={620}
-            className="col-span-1 row-span-2 h-full w-full rounded-3xl border border-border object-cover"
-          />
-          <img
-            src={grill.image}
-            alt={grill.alt}
-            loading="lazy"
-            decoding="async"
-            width={500}
-            height={300}
-            className="h-full w-full rounded-3xl border border-border object-cover"
-          />
+        <Reveal variants={slideInRight}>
           <img
             src={family.image}
             alt={family.alt}
             loading="lazy"
             decoding="async"
-            width={500}
-            height={300}
-            className="h-full w-full rounded-3xl border border-border object-cover"
-          />
-          <img
-            src={seating.image}
-            alt={seating.alt}
-            loading="lazy"
-            decoding="async"
-            width={1000}
-            height={300}
-            className="col-span-2 h-full w-full rounded-3xl border border-border object-cover"
+            width={800}
+            height={946}
+            className="aspect-[800/946] w-full rounded-3xl border border-border object-cover"
           />
         </Reveal>
       </Container>

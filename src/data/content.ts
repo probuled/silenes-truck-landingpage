@@ -3,10 +3,7 @@ import xBurguer from "../assets/photos/x-burguer.jpg";
 import bomGostoBurger from "../assets/photos/bom-gosto-burger.jpg";
 import xTropicalBurger from "../assets/photos/x-tropical-burger.jpg";
 import friedChickenBurger from "../assets/photos/fried-chicken-burger.jpg";
-import venueSign from "../assets/photos/venue-sign.jpg";
-import grillAction from "../assets/photos/grill-action.jpg";
 import familyPhoto from "../assets/photos/family-photo.jpg";
-import outdoorSeating from "../assets/photos/outdoor-seating.jpg";
 import type { SiteContent } from "../types/content";
 
 export const siteContent: SiteContent = {
@@ -74,24 +71,9 @@ export const siteContent: SiteContent = {
   ],
   gallery: [
     {
-      id: "sign",
-      image: venueSign,
-      alt: "Letreiro luminoso da Silene's Truck",
-    },
-    {
-      id: "grill",
-      image: grillAction,
-      alt: "Hambúrgueres sendo grelhados na chapa da Silene's Truck",
-    },
-    {
       id: "family",
       image: familyPhoto,
       alt: "Clientes reunidos e sorrindo na Silene's Truck",
-    },
-    {
-      id: "seating",
-      image: outdoorSeating,
-      alt: "Mesas ao ar livre com luzes decorativas da Silene's Truck",
     },
   ],
 };
