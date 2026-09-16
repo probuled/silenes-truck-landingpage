@@ -28,9 +28,9 @@ export function Home() {
         <Hero business={business} heroItem={menu[0]} heroImage={heroImage} />
         <Marquee />
         <Menu items={menu} business={business} />
-        <About photos={gallery} />
         <HoursLocation business={business} />
         <DeliveryCta business={business} />
+        <About photos={gallery} />
         <SocialContact business={business} />
       </main>
 

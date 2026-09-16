@@ -7,8 +7,8 @@ import sileneSticker from '../assets/brand/silene-sticker.png';
 
 const NAV_LINKS = [
   { href: '#cardapio', label: 'Cardápio' },
-  { href: '#sobre', label: 'Sobre' },
   { href: '#horarios', label: 'Horários' },
+  { href: '#sobre', label: 'Sobre' },
 ];
 
 export function Header() {
