@@ -27,7 +27,7 @@ export function About({ photos }: AboutProps) {
               </span>
             }
           />
-          <div className="mt-6 max-w-[62ch] space-y-4 text-cream/70">
+          <div className="mx-auto mt-6 max-w-[62ch] space-y-4 text-center text-cream/70 lg:mx-0 lg:text-left">
             <p className="text-pretty leading-relaxed">
               A Silene's Truck nasceu para servir hambúrguer artesanal com o
               cuidado de quem cozinha para a família: ingredientes frescos,
