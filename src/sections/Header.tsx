@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: '#cardapio', label: 'Cardápio' },
   { href: '#horarios', label: 'Horários' },
   { href: '#sobre', label: 'Sobre' },
+  { href: '#redes-sociais', label: 'Contato' },
 ];
 
 export function Header() {
