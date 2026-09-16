@@ -11,15 +11,16 @@ interface OrderButtonsProps {
   size?: OrderButtonsSize;
   showSeparators?: boolean;
   stackOnMobile?: boolean;
+  hideWhatsapp?: boolean;
 }
 
 const sizeStyles: Record<
   OrderButtonsSize,
-  { button: string; icon: string; ifoodLogoHeight: string; logoHeight: string; containerGap: string }
+  { button: string; icon: string; logoHeight: string; containerGap: string }
 > = {
-  compact: { button: 'px-4 py-3.5 text-xs', icon: 'size-4', ifoodLogoHeight: 'h-6', logoHeight: 'h-4', containerGap: 'gap-3' },
-  default: { button: 'px-6 py-3.5 text-sm', icon: 'size-5', ifoodLogoHeight: 'h-7', logoHeight: 'h-5', containerGap: 'gap-3' },
-  large: { button: 'px-8 py-4 text-base', icon: 'size-5', ifoodLogoHeight: 'h-8', logoHeight: 'h-5', containerGap: 'gap-3' },
+  compact: { button: 'px-4 py-3.5 text-xs', icon: 'size-4', logoHeight: 'h-5', containerGap: 'gap-3' },
+  default: { button: 'px-6 py-3.5 text-sm', icon: 'size-5', logoHeight: 'h-6', containerGap: 'gap-3' },
+  large: { button: 'px-8 py-4 text-base', icon: 'size-5', logoHeight: 'h-7', containerGap: 'gap-3' },
 };
 
 export function OrderButtons({
@@ -28,8 +29,9 @@ export function OrderButtons({
   size = 'default',
   showSeparators = true,
   stackOnMobile = false,
+  hideWhatsapp = false,
 }: OrderButtonsProps) {
-  const { button: buttonSize, icon: iconSize, ifoodLogoHeight, logoHeight, containerGap } = sizeStyles[size];
+  const { button: buttonSize, icon: iconSize, logoHeight, containerGap } = sizeStyles[size];
   const separatorClassName = cn(
     'text-sm font-semibold text-cream/50',
     stackOnMobile && 'hidden lg:inline',
@@ -44,20 +46,22 @@ export function OrderButtons({
         className,
       )}
     >
-      <Button
-        href={business.whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-        icon={<WhatsAppIcon className={iconSize} />}
-        className={cn(
-          'bg-whatsapp shadow-whatsapp/30 hover:shadow-whatsapp/60',
-          buttonSize,
-          stackOnMobile && 'w-full lg:w-auto',
-        )}
-        magnetic
-      >
-        Peça pelo WhatsApp
-      </Button>
+      {!hideWhatsapp && (
+        <Button
+          href={business.whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          icon={<WhatsAppIcon className={iconSize} />}
+          className={cn(
+            'bg-whatsapp shadow-whatsapp/30 hover:shadow-whatsapp/60',
+            buttonSize,
+            stackOnMobile && 'w-full lg:w-auto',
+          )}
+          magnetic
+        >
+          Peça pelo WhatsApp
+        </Button>
+      )}
 
       <div
         className={cn(
@@ -66,13 +70,13 @@ export function OrderButtons({
           containerGap,
         )}
       >
-        {showSeparators && <span className={separatorClassName}>ou</span>}
+        {showSeparators && !hideWhatsapp && <span className={separatorClassName}>ou</span>}
 
         <Button
           href={business.ifoodUrl}
           target="_blank"
           rel="noreferrer"
-          icon={<img src="/ifood-logo.png" alt="" className={cn(ifoodLogoHeight, 'w-auto brightness-0 invert')} />}
+          icon={<img src="/ifood-logo.png" alt="" className={cn(logoHeight, 'w-auto brightness-0 invert')} />}
           className={cn(
             'bg-ifood shadow-ifood/30 hover:shadow-ifood/60',
             buttonSize,
@@ -104,6 +108,30 @@ export function OrderButtons({
           )}
         >
           Peça pelo 99Food
+        </Button>
+      </div>
+
+      <div
+        className={cn(
+          'flex items-center',
+          stackOnMobile && 'w-full lg:w-auto',
+          containerGap,
+        )}
+      >
+        {showSeparators && <span className={separatorClassName}>ou</span>}
+
+        <Button
+          href={business.anotaAiUrl}
+          target="_blank"
+          rel="noreferrer"
+          icon={<img src="/anota-ai-logo.png" alt="" className={cn(logoHeight, 'w-auto')} />}
+          className={cn(
+            'bg-anota-ai shadow-anota-ai/30 hover:shadow-anota-ai/60',
+            buttonSize,
+            stackOnMobile && 'w-full lg:w-auto',
+          )}
+        >
+          Peça pelo Anota Ai
         </Button>
       </div>
     </div>

@@ -124,6 +124,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
               size="compact"
               showSeparators={false}
               stackOnMobile
+              hideWhatsapp
               className="mx-auto max-w-sm justify-center lg:mx-0 lg:max-w-none lg:justify-start"
             />
           </motion.div>

@@ -22,7 +22,7 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
         aria-hidden="true"
         className="absolute left-1/2 top-1/2 size-[420px] -translate-x-1/2 -translate-y-1/2 animate-breathe rounded-full bg-brand/25 blur-3xl"
       />
-      <Container className="relative flex flex-col items-center gap-6 text-center">
+      <Container className="relative flex flex-col items-center gap-6 text-center lg:max-w-7xl">
         <Reveal className="flex w-full flex-col items-center gap-6">
           <h2
             id="cta-heading"
@@ -31,14 +31,14 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             Pediu, <span className="text-brand">chegou!</span>
           </h2>
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-cream/70">
-            Peça pelo WhatsApp, Ifood ou 99Food e receba seu hambúrguer
-            fresquinho direto da chapa. Atendimento rápido, do jeitinho que você
-            gosta.
+            Peça pelo WhatsApp, Ifood, 99Food ou Anota Ai e receba seu
+            hambúrguer fresquinho direto da chapa. Atendimento rápido, do
+            jeitinho que você gosta.
           </p>
           <OrderButtons
             business={business}
             className="max-w-sm justify-center lg:max-w-none"
-            size="large"
+            size="default"
             stackOnMobile
           />
         </Reveal>
