@@ -6,6 +6,7 @@ import { Menu } from '../sections/Menu';
 import { About } from '../sections/About';
 import { HoursLocation } from '../sections/HoursLocation';
 import { DeliveryCta } from '../sections/DeliveryCta';
+import { SocialContact } from '../sections/SocialContact';
 import { Footer } from '../sections/Footer';
 import type { homeLoader } from '../routes';
 
@@ -30,6 +31,7 @@ export function Home() {
         <About photos={gallery} />
         <HoursLocation business={business} />
         <DeliveryCta business={business} />
+        <SocialContact business={business} />
       </main>
 
       <Footer business={business} />
