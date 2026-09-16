@@ -31,15 +31,16 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             Pediu, <span className="text-brand">chegou!</span>
           </h2>
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-cream/70">
-            Peça pelo WhatsApp, Ifood, 99Food ou Anota Ai e receba seu
-            hambúrguer fresquinho direto da chapa. Atendimento rápido, do
-            jeitinho que você gosta.
+            Peça pelo Ifood, 99Food ou Anota Ai e receba seu hambúrguer
+            fresquinho direto da chapa. Atendimento rápido, do jeitinho que
+            você gosta.
           </p>
           <OrderButtons
             business={business}
             className="max-w-sm justify-center lg:max-w-none"
             size="default"
             stackOnMobile
+            hideWhatsapp
           />
         </Reveal>
       </Container>
