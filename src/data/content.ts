@@ -1,4 +1,4 @@
-import heroBurgerCutout from "../assets/photos/hero-burger.webp";
+import heroBurgerCutout from "../assets/photos/hero-burger.png";
 import xBurguer from "../assets/photos/x-burguer.jpg";
 import xTropicalBurger from "../assets/photos/x-tropical-burger.jpg";
 import bomGostoBurger from "../assets/photos/bom-gosto-burger.jpg";
