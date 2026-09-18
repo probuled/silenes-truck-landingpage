@@ -94,7 +94,7 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
               src={sileneSticker}
               alt=""
               aria-hidden="true"
-              className="pointer-events-none absolute top-10 -right-12 w-32 -rotate-6 drop-shadow-[0_10px_16px_rgba(0,0,0,0.5)] xl:hidden"
+              className="pointer-events-none absolute top-10 -right-10 w-32 -rotate-6 drop-shadow-[0_10px_16px_rgba(0,0,0,0.5)] xl:hidden"
             />
             <img
               src={sileneSticker}
