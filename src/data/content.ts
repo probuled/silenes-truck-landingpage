@@ -23,7 +23,6 @@ export const siteContent: SiteContent = {
     ifoodUrl:
       "https://www.ifood.com.br/delivery/paulista-pe/silenes-truck-maranguape-i/18ce0325-d19f-4bfa-baa2-f2a434a48afb?utm_medium=share",
     ninetyNineFoodUrl: "https://oia.99app.com/dlp9/Rz2pji",
-    anotaAiUrl: "https://pedido.anota.ai/loja/silenes-truck",
     instagramUrl: "https://www.instagram.com/silenestruck/",
     instagramHandle: "@silenestruck",
     address: "Av. Antônio Cabral de Souza, 1770 - Paulista, PE",

@@ -121,11 +121,11 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
           <motion.div variants={fadeUp} className="mt-8">
             <OrderButtons
               business={business}
-              size="compact"
+              size="large"
               showSeparators={false}
               stackOnMobile
               hideWhatsapp
-              className="mx-auto max-w-sm justify-center lg:mx-0 lg:max-w-none lg:justify-start"
+              className="mx-auto max-w-sm justify-center lg:mx-0 lg:max-w-none lg:justify-center"
             />
           </motion.div>
         </motion.div>

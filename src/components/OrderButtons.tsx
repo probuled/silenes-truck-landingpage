@@ -110,30 +110,6 @@ export function OrderButtons({
           Peça pelo 99Food
         </Button>
       </div>
-
-      <div
-        className={cn(
-          'flex items-center',
-          stackOnMobile && 'w-full lg:w-auto',
-          containerGap,
-        )}
-      >
-        {showSeparators && <span className={separatorClassName}>ou</span>}
-
-        <Button
-          href={business.anotaAiUrl}
-          target="_blank"
-          rel="noreferrer"
-          icon={<img src="/anota-ai-logo.png" alt="" className={cn(logoHeight, 'w-auto')} />}
-          className={cn(
-            'bg-anota-ai shadow-anota-ai/30 hover:shadow-anota-ai/60',
-            buttonSize,
-            stackOnMobile && 'w-full lg:w-auto',
-          )}
-        >
-          Peça pelo Anota Ai
-        </Button>
-      </div>
     </div>
   );
 }

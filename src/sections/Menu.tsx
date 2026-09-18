@@ -28,7 +28,7 @@ export function Menu({ items, business }: MenuProps) {
                 Os destaques da <span className="text-brand">chapa</span>
               </span>
             }
-            description="Uma seleção dos hambúrgueres mais pedidos. Cardápio completo e combos direto no Ifood, 99Food e Anota Ai."
+            description="Uma seleção dos hambúrgueres mais pedidos. Cardápio completo e combos direto no Ifood e 99Food."
             align="center"
           />
         </Reveal>
@@ -98,8 +98,8 @@ export function Menu({ items, business }: MenuProps) {
 
         <Reveal className="mt-12 flex flex-col items-center gap-5">
           <p className="text-center text-sm text-cream/70">
-            Para ver o cardápio completo, entre no iFood, 99Food ou Anota Ai e
-            faça seu pedido.
+            Para ver o cardápio completo, entre no iFood ou 99Food e faça seu
+            pedido.
           </p>
 
           <div className="flex w-full max-w-xs flex-col items-center gap-3 sm:max-w-none sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
@@ -129,18 +129,6 @@ export function Menu({ items, business }: MenuProps) {
               className="w-full bg-ninety-nine text-ink shadow-ninety-nine/30 hover:shadow-ninety-nine/60 sm:w-auto"
             >
               Peça pelo 99Food
-            </Button>
-
-            <span className="text-sm font-semibold text-cream/50">ou</span>
-
-            <Button
-              href={business.anotaAiUrl}
-              target="_blank"
-              rel="noreferrer"
-              icon={<img src="/anota-ai-logo.png" alt="" className="h-6 w-auto" />}
-              className="w-full bg-anota-ai shadow-anota-ai/30 hover:shadow-anota-ai/60 sm:w-auto"
-            >
-              Peça pelo Anota Ai
             </Button>
           </div>
         </Reveal>

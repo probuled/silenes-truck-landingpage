@@ -27,7 +27,6 @@ export interface BusinessInfo {
   whatsappUrl: string;
   ifoodUrl: string;
   ninetyNineFoodUrl: string;
-  anotaAiUrl: string;
   instagramUrl: string;
   instagramHandle: string;
   address: string;
