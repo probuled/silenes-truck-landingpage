@@ -48,8 +48,8 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             Pediu, <span className="text-brand">chegou!</span>
           </h2>
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-cream/70">
-            Peça pelo Ifood ou 99Food e receba seu hambúrguer fresquinho
-            direto da chapa. Atendimento rápido, do jeitinho que você gosta.
+            Peça pelo Ifood ou 99Food e receba seu hambúrguer fresquinho direto
+            da chapa. Atendimento rápido, do jeitinho que você gosta.
           </p>
           <OrderButtons
             business={business}
@@ -66,17 +66,17 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
               description={
                 <>
                   Vindo presencialmente, aceitamos crédito, pix e débito. E o
-                  mais importante: também aceitamos vale{" "}
+                  mais importante: também aceitamos{" "}
                   <span className="font-semibold text-brand-light">
-                    alimentação
+                    vale alimentação
                   </span>{" "}
-                  e vale refeição dos seguintes parceiros:
+                  dos seguintes parceiros:
                 </>
               }
               align="center"
             />
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex max-w-[300px] flex-wrap items-center justify-center gap-4 sm:max-w-none">
               {MEAL_VOUCHER_PROVIDERS.map((provider) => (
                 <div
                   key={provider.name}
