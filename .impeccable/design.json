@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12T22:00:24Z",
+  "title": "Design System: Silene's Truck",
+  "extensions": {
+    "colorMeta": {
+      "carvao": { "role": "neutral", "displayName": "Carvão", "canonical": "#050505", "tonalRamp": ["#050505", "#0d0d0d", "#161616", "#1f1f1f", "#2a2a2a", "#3a3a3a", "#4d4d4d", "#666666"] },
+      "superficie": { "role": "neutral", "displayName": "Superfície", "canonical": "#121212", "tonalRamp": ["#0a0a0a", "#121212", "#1a1a1a", "#242424", "#303030", "#3d3d3d", "#4c4c4c", "#5c5c5c"] },
+      "superficie-elevada": { "role": "neutral", "displayName": "Superfície Elevada", "canonical": "#1a1a1a", "tonalRamp": ["#101010", "#1a1a1a", "#232323", "#2d2d2d", "#393939", "#464646", "#545454", "#646464"] },
+      "contorno": { "role": "neutral", "displayName": "Contorno", "canonical": "#2a2a2a", "tonalRamp": ["#161616", "#2a2a2a", "#363636", "#434343", "#525252", "#626262", "#747474", "#888888"] },
+      "brasa": { "role": "primary", "displayName": "Brasa", "canonical": "#e11d2a", "tonalRamp": ["#3d0206", "#66040b", "#a3141e", "#c81a26", "#e11d2a", "#ff4d54", "#ff8085", "#ffb3b6"] },
+      "brasa-viva": { "role": "primary", "displayName": "Brasa Viva", "canonical": "#ff4d54", "tonalRamp": ["#4d0407", "#7a0a0f", "#b01319", "#e02e34", "#ff4d54", "#ff7d81", "#ffabad", "#ffd6d7"] },
+      "brasa-profunda": { "role": "primary", "displayName": "Brasa Profunda", "canonical": "#a3141e", "tonalRamp": ["#2b0509", "#4a0a10", "#6f0f18", "#a3141e", "#c02530", "#dd4750", "#ee868c", "#f7c1c4"] },
+      "creme": { "role": "neutral", "displayName": "Creme", "canonical": "#f5efe6", "tonalRamp": ["#4a453d", "#6b6459", "#8f877a", "#b3a99a", "#d3c9b8", "#e6ded1", "#f5efe6", "#faf7f2"] },
+      "aberto": { "role": "functional", "displayName": "Aberto (status)", "canonical": "#34d399", "tonalRamp": ["#04371f", "#065f37", "#0a8f52", "#10b981", "#34d399", "#6ee7b7", "#a7f3d0", "#d1fae5"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Anton)", "purpose": "Títulos H1/H2/H3, sempre uppercase — a voz do letreiro luminoso." },
+      "body": { "displayName": "Body (Inter)", "purpose": "Parágrafos e texto corrido; pesos 400-800 disponíveis via Fontsource." },
+      "label": { "displayName": "Label (Inter)", "purpose": "Eyebrows, nav links, badges, tags — sempre uppercase com tracking largo." }
+    },
+    "shadows": [
+      { "name": "glow-de-acao", "value": "shadow-lg shadow-brand/30, hover:shadow-brand/60", "purpose": "Botão primário em repouso e hover — brilho de brasa, não sombra neutra. O fundo (brasa-profunda) não muda de cor no hover, só o glow e a elevação, para manter contraste AA." },
+      { "name": "glow-ambiente", "value": "blur-3xl bg-brand/30, animate-breathe", "purpose": "Halo pulsante atrás da foto do produto na Hero." },
+      { "name": "sombra-de-produto", "value": "drop-shadow-[0_30px_40px_rgba(0,0,0,0.6)]", "purpose": "Única sombra neutra sobre fotografia — ancora o hambúrguer da Hero." },
+      { "name": "sombra-de-header", "value": "shadow-lg shadow-black/40", "purpose": "Header fixo ao rolar ou com menu mobile aberto." }
+    ],
+    "motion": [
+      { "name": "fade-up", "value": "opacity 0→1, y 28px→0, duration 0.6s, ease [0.22,1,0.36,1]", "purpose": "Entrada padrão de texto/blocos ao entrar na viewport (Reveal)." },
+      { "name": "stagger-container", "value": "staggerChildren 0.12s, delayChildren 0.05s", "purpose": "Encadeia fade-up entre filhos (linhas do H1, grid de cardápio)." },
+      { "name": "float", "value": "translateY 0→-16px, 6s ease-in-out infinite", "purpose": "Flutuação suave da imagem do produto na Hero." },
+      { "name": "breathe", "value": "scale 1→1.06, opacity 0.9→1, 5s ease-in-out infinite", "purpose": "Pulsação do glow de brasa atrás do produto." },
+      { "name": "marquee", "value": "translateX 0→-50%, 28s linear infinite", "purpose": "Faixa de frases de marca em loop contínuo." },
+      { "name": "magnetic-pull", "value": "spring stiffness 300, damping 20, mass 0.4, raio ~10px", "purpose": "Botões CTA de destaque seguem o cursor sutilmente." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão Primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal (ex: 'Peça pelo WhatsApp'), pill vermelho com reflexo diagonal no hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span class=\"ds-btn-shine\"></span><span class=\"ds-btn-label\">Peça pelo WhatsApp</span></a>",
+      "css": ".ds-btn-primary { position: relative; display: inline-flex; align-items: center; gap: 8px; overflow: hidden; border-radius: 9999px; padding: 14px 24px; background: #a3141e; color: #f5efe6; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; box-shadow: 0 10px 25px -5px rgba(225,29,42,0.3); transition: box-shadow 0.3s, transform 0.3s; } .ds-btn-primary:hover { box-shadow: 0 10px 25px -5px rgba(225,29,42,0.6); transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 2px solid #e11d2a; outline-offset: 2px; } .ds-btn-shine { position: absolute; top: 0; bottom: 0; left: -33%; width: 33%; background: rgba(255,255,255,0.25); transform: skewX(-12deg); opacity: 0; transition: left 0.7s ease-out, opacity 0.7s ease-out; } .ds-btn-primary:hover .ds-btn-shine { left: 120%; opacity: 1; }"
+    },
+    {
+      "name": "Botão Outline",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "CTA secundário (ex: 'Ver cardápio', 'Traçar rota'), transparente com borda creme.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Ver cardápio</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; border-radius: 9999px; padding: 14px 24px; background: transparent; border: 1px solid rgba(245,239,230,0.4); color: #f5efe6; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: border-color 0.3s, color 0.3s; } .ds-btn-outline:hover, .ds-btn-outline:focus-visible { border-color: #ff4d54; color: #ff4d54; } .ds-btn-outline:focus-visible { outline: 2px solid #e11d2a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Card de Cardápio",
+      "kind": "card",
+      "refersTo": "card-cardapio",
+      "description": "Cartão de item do menu: foto 4:3, tag opcional, nome, descrição e preço (ou 'Consulte o preço').",
+      "html": "<article class=\"ds-card-menu\"><div class=\"ds-card-menu-media\"><span class=\"ds-card-menu-tag\">Mais pedido</span></div><div class=\"ds-card-menu-body\"><h3 class=\"ds-card-menu-title\">Bacon Supreme</h3><p class=\"ds-card-menu-desc\">Pão brioche, blend bovino, bacon crocante, cheddar cremoso.</p><span class=\"ds-card-menu-price\">R$ 21,90</span></div></article>",
+      "css": ".ds-card-menu { display: flex; flex-direction: column; overflow: hidden; border-radius: 24px; border: 1px solid #2a2a2a; background: #121212; transition: transform 0.2s; } .ds-card-menu:hover { transform: translateY(-6px); } .ds-card-menu-media { position: relative; aspect-ratio: 4/3; background: #1a1a1a; } .ds-card-menu-tag { position: absolute; left: 12px; top: 12px; border-radius: 9999px; background: #a3141e; padding: 4px 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #f5efe6; } .ds-card-menu-body { display: flex; flex: 1; flex-direction: column; padding: 20px; } .ds-card-menu-title { font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 20px; text-transform: uppercase; color: #f5efe6; } .ds-card-menu-desc { flex: 1; margin-top: 8px; font-size: 14px; color: rgba(245,239,230,0.65); } .ds-card-menu-price { margin-top: 16px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 18px; color: #ff4d54; }"
+    },
+    {
+      "name": "Badge de Status (Aberto/Fechado)",
+      "kind": "chip",
+      "refersTo": "status-badge-aberto",
+      "description": "Pílula com ponto indicador mostrando se a loja está aberta agora, calculada em tempo real a partir do horário de funcionamento.",
+      "html": "<span class=\"ds-status-badge ds-status-open\"><span class=\"ds-status-dot\"></span>Aberto agora · fecha às 23h30</span>",
+      "css": ".ds-status-badge { display: inline-flex; align-items: center; gap: 8px; border-radius: 9999px; border: 1px solid; padding: 6px 16px; font-family: 'Inter', system-ui, sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; } .ds-status-open { border-color: rgba(52,211,153,0.4); color: #34d399; } .ds-status-closed { border-color: rgba(245,239,230,0.2); color: rgba(245,239,230,0.6); } .ds-status-dot { width: 8px; height: 8px; border-radius: 9999px; background: currentColor; }"
+    },
+    {
+      "name": "Navegação (Header)",
+      "kind": "nav",
+      "refersTo": "header-nav",
+      "description": "Header fixo, transparente no topo e com vidro escuro ao rolar; links com sublinhado animado.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-header-logo\">Silene's <span class=\"ds-header-logo-accent\">Truck</span></span><nav class=\"ds-header-nav\"><a href=\"#\" class=\"ds-header-link\">Cardápio</a><a href=\"#\" class=\"ds-header-link\">Sobre</a></nav></header>",
+      "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; height: 80px; padding: 0 24px; background: rgba(5,5,5,0.95); backdrop-filter: blur(12px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4); } .ds-header-logo { font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 24px; text-transform: uppercase; color: #f5efe6; } .ds-header-logo-accent { color: #e11d2a; } .ds-header-nav { display: flex; gap: 32px; } .ds-header-link { position: relative; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(245,239,230,0.8); text-decoration: none; transition: color 0.3s; } .ds-header-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: #e11d2a; transform: scaleX(0); transform-origin: left; transition: transform 0.3s; } .ds-header-link:hover { color: #e11d2a; } .ds-header-link:hover::after { transform: scaleX(1); }"
+    },
+    {
+      "name": "Marquee de Frases",
+      "kind": "custom",
+      "refersTo": "marquee-frases",
+      "description": "Faixa horizontal infinita com frases curtas de marca separadas por ícone de chama; puramente atmosférica.",
+      "html": "<div class=\"ds-marquee\"><div class=\"ds-marquee-track\"><span class=\"ds-marquee-item\">🔥 Feito na chapa</span><span class=\"ds-marquee-item\">🔥 Pediu, chegou</span></div></div>",
+      "css": ".ds-marquee { overflow: hidden; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; background: #121212; padding: 16px 0; } .ds-marquee-track { display: flex; width: max-content; gap: 40px; animation: ds-marquee-scroll 28s linear infinite; } .ds-marquee-item { display: flex; align-items: center; gap: 12px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(245,239,230,0.7); } @keyframes ds-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Chapa Depois do Escurecer",
+    "overview": "O site simula o próprio food truck de noite: fundo quase preto (carvão), luz vermelha de brasa pulsando em pontos específicos, e a comida como único elemento totalmente iluminado na cena. Tudo em volta é escuro e contido de propósito — igual à experiência real de chegar num food truck depois das 17h, guiado pela luz e pelo cheiro da chapa.\n\nA composição é direta e sem rodeios: tipografia condensada em caixa alta grita como um letreiro de trailer, o corpo de texto em Inter é conversacional e caloroso (\"do jeitinho que você gosta\"), e cada seção converge para uma única ação — abrir o WhatsApp. Não há ornamento gratuito; os poucos efeitos de movimento (embers subindo, respiração do glow, tilt 3D no hambúrguer do hero) existem para reforçar \"comida saindo quente da chapa\", não para impressionar por si.\n\nRejeições confirmadas pela implementação: nada de cards com sombra neutra genérica (a profundidade vem de contorno + glow colorido, nunca de box-shadow cinza); nada de paleta pastel ou clean-editorial — o contraste é alto e a cor é usada com intenção, não decoração.",
+    "keyCharacteristics": [
+      "Fundo quase-preto (#050505) como tela de fundo constante — nunca branco, nunca claro.",
+      "Um único acento vermelho-brasa que carrega toda a urgência/CTA do sistema.",
+      "Tipografia display condensada e sempre em caixa alta, corpo de texto sempre em Inter.",
+      "Cantos sempre arredondados — rounded-3xl em cards/fotos, rounded-full em pílulas e botões — nunca cantos retos.",
+      "Profundidade por contorno + glow, não por sombra neutra.",
+      "Micro-interações com propósito culinário/físico (fogo, calor, brasa), não decoração abstrata."
+    ],
+    "rules": [
+      { "name": "A Regra da Brasa Única", "body": "Existe exatamente um acento de cor de marca (brasa) no sistema. Verde só aparece para significar \"aberto agora\"; nenhuma outra cor de destaque deve ser introduzida sem necessidade funcional equivalente.", "section": "colors" },
+      { "name": "A Regra do Letreiro", "body": "Todo uso de Anton é em caixa alta. Nunca renderizar Anton em minúsculas — é a fonte do letreiro luminoso, e letreiro luminoso não sussurra.", "section": "typography" },
+      { "name": "A Regra do Contorno, Não da Sombra", "body": "Cards e superfícies se separam do fundo por border-contorno, não por box-shadow. Sombra neutra é reservada a dois casos apenas: a foto de produto na Hero e o header flutuante ao rolar.", "section": "elevation" },
+      { "name": "A Regra do Texto Claro", "body": "brasa nunca é a cor de um texto normal/pequeno diretamente sobre carvao/superficie — nesse caso o texto usa brasa-viva. brasa (base) só aparece como texto em títulos display grandes (≥24px) ou como fill de ícone, onde o limiar de contraste exigido (3:1) já é atendido.", "section": "colors" }
+    ],
+    "dos": [
+      "Do manter o fundo em carvao (#050505) em toda nova seção — a página nunca deve ter um bloco branco ou claro.",
+      "Do usar rounded-3xl para qualquer novo card/foto e rounded-full para qualquer novo elemento de ação ou pílula — nunca um raio intermediário novo.",
+      "Do reservar o tom de brasa (brasa, brasa-viva ou brasa-profunda, conforme a Regra do Texto Claro) só para ação/destaque (CTA, preço, tag, eyebrow, ícone ativo); todo o resto do texto é creme, com /60 como piso para qualquer texto real (/40 e abaixo só para elementos não-textuais).",
+      "Do envolver entradas de seção em Reveal/staggerContainer (fadeUp) e respeitar prefers-reduced-motion, que já está tratado em duas camadas (CSS global + useReducedMotion em cada componente animado).",
+      "Do usar contorno (border-contorno) como principal recurso de separação de superfície, seguindo a Regra do Contorno."
+    ],
+    "donts": [
+      "Don't adicionar box-shadow cinza/neutro a cards ou botões — a única sombra neutra permitida é no header ao rolar e no drop-shadow da foto de produto da Hero.",
+      "Don't introduzir uma segunda cor de acento de marca — a paleta é intencionalmente mono-acento (brasa); verde é reservado exclusivamente ao status \"aberto\".",
+      "Don't renderizar Anton em minúsculas ou usá-lo para corpo de texto — é só para display, sempre uppercase.",
+      "Don't simular carrinho, checkout ou formulário de pedido dentro do site — todo CTA de \"pedir\" aponta para WhatsApp/telefone.",
+      "Don't trocar a fotografia real do ambiente/produto por imagens de banco de imagens — a fotografia real é a prova social central do sistema."
+    ]
+  }
+}
