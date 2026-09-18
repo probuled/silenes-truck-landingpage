@@ -1,11 +1,28 @@
 import { Container } from "../components/Container";
 import { Reveal } from "../components/Reveal";
 import { OrderButtons } from "../components/OrderButtons";
+import { SectionHeading } from "../components/SectionHeading";
+import { cn } from "../utils/cn";
 import type { BusinessInfo } from "../types/content";
 
 interface DeliveryCtaProps {
   business: BusinessInfo;
 }
+
+interface MealVoucherProvider {
+  name: string;
+  logo: string;
+  /** Recorta a margem branca de algumas logos para preencher o tile por completo. */
+  imageClassName?: string;
+}
+
+const MEAL_VOUCHER_PROVIDERS: MealVoucherProvider[] = [
+  { name: "VR", logo: "/vr-logo.png", imageClassName: "scale-125" },
+  { name: "Ticket", logo: "/ticket-logo.png" },
+  { name: "Cielo", logo: "/cielo-logo.jpg" },
+  { name: "Sodexo", logo: "/sodexo-logo.jpg" },
+  { name: "Pluxee", logo: "/pluxee-logo.png" },
+];
 
 export function DeliveryCta({ business }: DeliveryCtaProps) {
   return (
@@ -41,6 +58,43 @@ export function DeliveryCta({ business }: DeliveryCtaProps) {
             stackOnMobile
             hideWhatsapp
           />
+
+          <div className="mt-14 flex w-full flex-col items-center gap-8 border-t border-cream/10 pt-12">
+            <SectionHeading
+              eyebrow="Pagamento no local"
+              title="Aceitamos também vale refeição"
+              description={
+                <>
+                  Vindo presencialmente, aceitamos crédito, pix e débito. E o
+                  mais importante: também aceitamos vale{" "}
+                  <span className="font-semibold text-brand-light">
+                    alimentação
+                  </span>{" "}
+                  e vale refeição dos seguintes parceiros:
+                </>
+              }
+              align="center"
+            />
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {MEAL_VOUCHER_PROVIDERS.map((provider) => (
+                <div
+                  key={provider.name}
+                  className="aspect-square w-20 overflow-hidden rounded-2xl shadow-lg shadow-black/30 sm:w-24"
+                >
+                  <img
+                    src={provider.logo}
+                    alt={provider.name}
+                    loading="lazy"
+                    className={cn(
+                      "h-full w-full object-cover",
+                      provider.imageClassName,
+                    )}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </Reveal>
       </Container>
     </section>
