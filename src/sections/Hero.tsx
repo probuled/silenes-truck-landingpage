@@ -10,6 +10,7 @@ import { OrderButtons } from "../components/OrderButtons";
 import { useTilt } from "../hooks/useTilt";
 import { staggerContainer, fadeUp } from "../animations/variants";
 import { cn } from "../utils/cn";
+import sileneSticker from "../assets/brand/silene-sticker.png";
 import type { BusinessInfo, MenuItem } from "../types/content";
 
 interface HeroProps {
@@ -87,24 +88,24 @@ export function Hero({ business, heroItem, heroImage }: HeroProps) {
         >
           <motion.h1
             variants={staggerContainer}
-            className="mt-6 font-display text-5xl uppercase leading-[1.15] text-cream sm:text-6xl lg:text-7xl"
+            className="relative mt-6 font-display text-5xl uppercase leading-[1.15] text-cream sm:text-6xl lg:text-7xl"
           >
+            <img
+              src={sileneSticker}
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute top-[68px] right-[112px] hidden w-40 -rotate-6 drop-shadow-[0_16px_24px_rgba(0,0,0,0.5)] xl:block"
+            />
             <motion.span variants={fadeUp} className="block">
               Hambúrguer
             </motion.span>
             <motion.span variants={fadeUp} className="block text-brand">
               bem-feito,
             </motion.span>
-            <motion.span
-              variants={fadeUp}
-              className="block lg:pl-[clamp(16px,7vw,64px)]"
-            >
+            <motion.span variants={fadeUp} className="block">
               do jeitinho
             </motion.span>
-            <motion.span
-              variants={fadeUp}
-              className="block lg:pl-[clamp(16px,7vw,64px)]"
-            >
+            <motion.span variants={fadeUp} className="block">
               que você <span className="text-brand">gosta</span>
             </motion.span>
           </motion.h1>
