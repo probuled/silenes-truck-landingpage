@@ -19,7 +19,7 @@ interface MealVoucherProvider {
 const MEAL_VOUCHER_PROVIDERS: MealVoucherProvider[] = [
   { name: "VR", logo: "/vr-logo.png", imageClassName: "scale-125" },
   { name: "Ticket", logo: "/ticket-logo.png" },
-  { name: "Cielo", logo: "/cielo-logo.jpg" },
+  { name: "Alelo", logo: "/alelo-logo.png" },
   { name: "Sodexo", logo: "/sodexo-logo.jpg" },
   { name: "Pluxee", logo: "/pluxee-logo.png" },
 ];
